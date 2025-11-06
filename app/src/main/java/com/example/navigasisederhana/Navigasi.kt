@@ -11,6 +11,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.navigasisederhana.ui.theme.NavigasiSederhanaTheme
+import com.example.navigasisederhana.view.FormIsian
+import com.example.navigasisederhana.view.TampilData
 
 enum class Navigasi {
     Formulir,
@@ -30,8 +32,8 @@ fun DataApp(
             modifier = Modifier.padding(paddingValues = isiRuang)
         ) {
             composable(route = Navigasi.Formulir.name){
-                FormIsian (
-                    onSubmitBtnClick = {
+                FormIsian(
+                    OnSubmitBtnClick = {
                         navController.navigate(route = Navigasi.Detail.name)
                     }
                 )
