@@ -10,6 +10,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.navigasisederhana.ui.theme.NavigasiSederhanaTheme
 
 enum class Navigasi {
     Formulir,
@@ -39,7 +40,14 @@ fun DataApp(
                 TampilData(
                     onBackBtnClick = {cancelAndBackToFormulir(navController)}
                 )
-        }
+
+            }
         }
     }
+}
+
+private fun cancelAndBackToFormulir(
+    navController: NavController
+) {
+    navController.popBackStack(route = Navigasi.Formulir.name, inclusive = false)
 }
